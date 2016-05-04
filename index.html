@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="js/modernizr.custom.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="clearfix">
+        <h1> A memory game: The Golden Finch</h1><br>
+      </header>
+      <div class="main">
+        <div style="width: 100%; display: table;">
+            <div style="display: table-row">
+                <div id="memory_board" style="width: 800px; display: table-cell;"> Left </div>
+                <div style="display: table-cell; padding-left: 10px">
+                  <div id='timer'>
+                    <p><span id="minutes">0</span> minutes <span id="seconds">0</span> seconds | <span id="finished">0 </span>/ 12 pairs</p>
+                  </div>
+                  <button id="start" onclick="newBoard();">Restart Game</button>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+      <script src="memorygame.js"></script>
+      <script>newBoard();</script>
+    </body>
+</html>
+
