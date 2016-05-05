@@ -51,6 +51,7 @@ function newBoard(){
   resetCounter();
   $("#memory_board").effect( "shake", {times:4}, 1000 );
   $('#title').text("Match The Cats");
+  $('#side').show();
 }
 
 
@@ -141,14 +142,13 @@ function pad(val)
 
 
 function win() {
+  $('#side').hide();
   var oldrawScore = localStorage.getItem('rawBestScore');
   if (totalSeconds < oldrawScore) {
     localStorage.setItem('rawBestScore', totalSeconds);
     localStorage.setItem("bestscore", parseInt(totalSeconds/60) + " minutes " + totalSeconds%60 + " seconds");
   }
   $('#bestscore').text(localStorage.getItem("bestscore"));
-  document.getElementById('memory_board').innerHTML = "";
-  newBoard();
   $('#title').text("You Made It !! You finished it in " + displayScore(totalSeconds));
 }
 
