@@ -46,6 +46,8 @@ function newBoard(){
   document.getElementById('memory_board').innerHTML = output;
   resetTime();
   resetCounter();
+  $("#memory_board").effect( "shake", {times:4}, 1000 );
+
 }
 
 
@@ -72,7 +74,7 @@ function memoryFlipTile(tile,val){
         memory_tile_ids = [];
         // Check to see if the whole board is cleared
         if(tiles_flipped == memory_array.length){
-          alert("Board cleared... generating new board");
+          alert("You Made It !!");
           document.getElementById('memory_board').innerHTML = "";
           newBoard();
         }
