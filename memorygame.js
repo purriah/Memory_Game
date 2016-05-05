@@ -5,18 +5,18 @@ var memory_values = [];
 var memory_tile_ids = [];
 var tiles_flipped = 0;
 var memory_dictionary = {
-                            'A': 'golden_finch_01.png',
-                            'B': 'golden_finch_02.png',
-                            'C': 'golden_finch_03.png',
-                            'D': 'golden_finch_04.png',
-                            'E': 'golden_finch_05.png',
-                            'F': 'golden_finch_06.png',
-                            'G': 'golden_finch_07.png',
-                            'H': 'golden_finch_08.png',
-                            'I': 'golden_finch_09.png',
-                            'J': 'golden_finch_10.png',
-                            'K': 'golden_finch_11.png',
-                            'L': 'golden_finch_12.png',
+                            'A': '1.jpeg',
+                            'B': '2.jpeg',
+                            'C': '3.jpeg',
+                            'D': '4.jpeg',
+                            'E': '5.jpeg',
+                            'F': '6.jpeg',
+                            'G': '7.jpeg',
+                            'H': '8.jpeg',
+                            'I': '9.jpeg',
+                            'J': '10.jpeg',
+                            'K': '11.jpeg',
+                            'L': '12.jpeg',
                         };
 
 var x = 0;
@@ -54,7 +54,7 @@ function memoryFlipTile(tile,val){
     console.log(val);
     tile.style.opacity = 0.9;
     tile.style.background = '#FFF';
-    var innerHTML = '<img src="' + memory_dictionary[val] + '" style="width:80px;height:80px;"></img>';
+    var innerHTML = '<img src="' + memory_dictionary[val] + '" style="width:53px;height:53px;"></img>';
     console.log(innerHTML);
     tile.innerHTML = innerHTML;
     if(memory_values.length == 0){
@@ -80,12 +80,10 @@ function memoryFlipTile(tile,val){
         function flip2Back(){
             // Flip the 2 tiles back over
             var tile_1 = document.getElementById(memory_tile_ids[0]);
-            tile_1.style.opacity = 0.5;
             var tile_2 = document.getElementById(memory_tile_ids[1]);
-            tile_2.style.opacity = 0.5;
-            tile_1.style.background = 'background: #CCC';
+            tile_1.style.background = "#000";
                   tile_1.innerHTML = "";
-            tile_2.style.background = 'background: #CCC';
+            tile_2.style.background = "#000"
                   tile_2.innerHTML = "";
             // Clear both arrays
             memory_values = [];
