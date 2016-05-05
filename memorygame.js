@@ -24,6 +24,9 @@ var minutesLabel = document.getElementById("minutes");
 var secondsLabel = document.getElementById("seconds");
 var totalSeconds = 0;
 
+var bestscore = localStorage.getItem("bestscore");
+$('#bestscore').text(bestscore);
+
 Array.prototype.memory_tile_shuffle = function(){
     var i = this.length, j, temp;
     while(--i > 0){
@@ -47,7 +50,7 @@ function newBoard(){
   resetTime();
   resetCounter();
   $("#memory_board").effect( "shake", {times:4}, 1000 );
-
+  $('#title').text("Match The Cats");
 }
 
 
@@ -74,9 +77,7 @@ function memoryFlipTile(tile,val){
         memory_tile_ids = [];
         // Check to see if the whole board is cleared
         if(tiles_flipped == memory_array.length){
-          alert("You Made It !!");
-          document.getElementById('memory_board').innerHTML = "";
-          newBoard();
+          win();
         }
       } else {
         function flip2Back(){
@@ -89,7 +90,7 @@ function memoryFlipTile(tile,val){
                   tile_2.innerHTML = "";
             // Clear both arrays
             memory_values = [];
-                  memory_tile_ids = [];
+            memory_tile_ids = [];
         }
         setTimeout(flip2Back, 700);
       }
@@ -137,3 +138,45 @@ function pad(val)
         return valString;
     }
 }
+
+
+function win() {
+  var oldrawScore = localStorage.getItem('rawBestScore');
+  if (totalSeconds < oldrawScore) {
+    localStorage.setItem('rawBestScore', totalSeconds);
+    localStorage.setItem("bestscore", parseInt(totalSeconds/60) + " minutes " + totalSeconds%60 + " seconds");
+  }
+  $('#bestscore').text(localStorage.getItem("bestscore"));
+  document.getElementById('memory_board').innerHTML = "";
+  newBoard();
+  $('#title').text("You Made It !! You finished it in " + displayScore(totalSeconds));
+}
+
+
+function displayScore(totalSeconds) {
+  return parseInt(totalSeconds/60) + " minutes " + totalSeconds%60 + " seconds";
+};
+
+
+function animatethis(targetElement, speed) {
+    $(targetElement).animate({ marginLeft: "+=200px"},
+    {
+        duration: speed,
+        complete: function ()
+        {
+            targetElement.animate({ marginLeft: "-=200px" },
+            {
+                duration: speed,
+                complete: function ()
+                {
+                    animatethis(targetElement, speed);
+                }
+            });
+        }
+    });
+};
+
+animatethis($('#box'), 5000);
+
+
+
