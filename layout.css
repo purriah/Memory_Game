@@ -18,11 +18,19 @@
         letter-spacing:.04em; /* letter spacing sets the horizontal spacing (kerning) between letters in a block of text. */
         line-height:21px; /* line height sets the vertical spacing between lines of text. */
     }
-        
+    
+    div#mainborder{
+        padding: 10px;
+        margin:0 auto;
+        text-align:center;
+        width:80%;
+        border: 5px dashed #000; 
+    }
+
     div#header{
-        border-top: 5px solid #000;
+/*      border-top: 5px dashed #000;
         border-left:5px dashed #000;
-        border-right:5px dashed #000;       
+        border-right:5px dashed #000;    */   
         background-position:left bottom;/* sets a background image position */
         color:#fff; /* sets the the color of all header text to white */
         -webkit-border-bottom-right-radius: 4px;
@@ -32,33 +40,33 @@
         border-bottom-right-radius: 4px;
         border-bottom-left-radius: 4px; /* these 6 lines of border-radius code make rounded corners for the bottom work in firefox, safari, chrome, opera and IE9 */
         margin:0 auto; /* by declaring a width on any block element (like a div), giving it a css property of margin:0 auto will center that block element on page */
-        min-height:130px;   /* setting a minimum height of an element means that it can grow to be bigger, if there is a lot of content in it. However, if it doesn't have enough content, it will be at the very least (in this example) 130 pixels tall */
-        padding:10px;   /* by setting a padding, the content within a HTML element will not touch the edges of that element (by adding padding to an element, it actually makes that element appear wider and/or taller.  In this case, the header div is now 15px wider and taller on each side. */
-        width:80%;  /* sets the width of the div to 900px. Remember that if you add padding to this element it will increase the size by the number of pixels in the padding. In this example the width is 900px and we have 15px to the left and right so the total width of the header will be (870px + 15px+15px=930px */
+        min-height:100px;   /* setting a minimum height of an element means that it can grow to be bigger, if there is a lot of content in it. However, if it doesn't have enough content, it will be at the very least (in this example) 130 pixels tall */
+           /* by setting a padding, the content within a HTML element will not touch the edges of that element (by adding padding to an element, it actually makes that element appear wider and/or taller.  In this case, the header div is now 15px wider and taller on each side. */
+        width:100%;  /* sets the width of the div to 900px. Remember that if you add padding to this element it will increase the size by the number of pixels in the padding. In this example the width is 900px and we have 15px to the left and right so the total width of the header will be (870px + 15px+15px=930px */
         margin-bottom: 5px;
     }
 
     div.content{
-
-        margin:15px auto; /* this adds a margin of 15px to the top and bottom of the div with the class of content.  The auto margin applies to the left and right side of the div which is what centers the div in the middle of the page. */
+        margin:15px 5px; /* this adds a margin of 15px to the top and bottom of the div with the class of content.  The auto margin applies to the left and right side of the div which is what centers the div in the middle of the page. */
         min-height:300px;
         padding:10px;
         width:80%;
-        border-left:5px solid #000;
-        border-right:5px solid #000;
-
+/*      border-left:5px dashed #000;
+        border-right:5px dashed #000;
+        border-bottom:5px dashed #000;*/
         margin-top: 50px;
 
     }
                 
     div.col-right{
         float:right;
-        width:660px
+        width:600px
         }
         
     div.sidebar-left{
+        text-align: left;
         float:left;
-        padding:0 10px;
+        padding:10px;
         width:200px;    /* when floating content next to each other, applying set widths will make the content play nice with each other. Change the width of the siebar, or take away the width of the above "div.col-right" and see what happens to get a better idea of how widths effect floats */
         }
         
@@ -73,28 +81,25 @@
 
     div#footer{
         padding:10px;
-        border-bottom: 5px solid #000;
-        border-left:5px dashed #000;
-        border-right:5px dashed #000;
-                border-top: 5px dashed #000;
-
+        border: 5px dashed #000;
         background-color:#fff;
         margin:0 auto;
         text-align:center;
         width:80%;
         margin-bottom: 50px;
-         margin-top: 50px;
+        margin-top: 5px;
     }
+    /*
     .float-left{
-        float:left; /* use this on an element (like an image) to make it float to the left of it's containing HTML element */
+        float:left; /* use this on an element (like an image) to make it float to the left of it's containing HTML element 
         margin:0  10px 10px 0;
     }
     .float-right{
-        float:right;    /* use this on an element (like an image) to make it float to the right of it's containing HTML element */
+        float:right;     /*use this on an element (like an image) to make it float to the right of it's containing HTML element 
     }
     .float-right img{
-        margin:0 0 10px 10px;   /* use this on an element (like an image) to make it float to the right of it's containing HTML element */
-    }
+        margin:0 0 10px 10px;    use this on an element (like an image) to make it float to the right of it's containing HTML element 
+    }*/
     .clear{
-        clear:both; /* this clears floats.  This would be used to cancel out a float's behavior on content below it.  */
-    }   
+        clear:both; /* this clears floats.  This would be used to cancel out a float's behavior on content below it. 
+    }  
