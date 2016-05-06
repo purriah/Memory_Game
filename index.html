@@ -9,50 +9,46 @@
   </head>
 
   <body>
-    <div id="mainborder">
-      <div id="header">
-        <div class="tuna"></div>
-        <div style="width: 100%; height: 20px; border-bottom: 5px solid #000; text-align: center">
-          <span style="font-size: 40px; background-color: #fff; color: #000; padding: 0 10px;">
-            Match The Cats <!--Padding is optional-->
-          </span>
-        </div>
-      </div>
+    <div id="header">
 
-      <div class="content">
-        <div class="col-right">
-          <div id="memory_board"></div>
-        </div>
-        <div class="sidebar-left">
-          <div style='margin-left: 20px; width: 100%;'>
-      	   <h3>Time: <span id="minutes">00</span> minutes <span id="seconds">00</span> seconds</h3>
-            <h3>Pairs: <span id="finished">0</span> / 18</h3>
-            <h3>Accuracy: <span id="accuracy">0</span>%</h3>
-            <div id="ballMenuContainer">
-              <div id="menuBall2" class="menuBall">
-                <a href="#" class="ball redball" onclick="currentDifficulty(); return false;">
-                  <div class="menuText">
-                      Restart Game
-                  </div>
-                </a>
-                </div>
-              <div class="easyDiff">  
-              <img id="easy" src="easy/easy.jpg" onclick="easyDifficulty()" style="width: 100px; height: 100px; margin-top: 20px;"></img>
-              </div>
-              <div class="normDiff">
-              <img id="norm" src="normal/normal.jpg" onclick="normalDifficulty()" style="width: 100px; height: 100px; margin-top: 20px;"></img>
-              </div>
-              <div class="hardDiff">
-              <img id="hard" src="hard/hard.jpg" onclick="hardDifficulty()" style="width: 100px; height: 100px; margin-top: 20px;"></img>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br class="clear" />
+      <div class="tuna"></div>
+      <div style="width: 100%; height: 20px; border-bottom: 5px solid black; text-align: center">
+        <span id='title' style="font-size: 40px; background-color: #fff; color: #000; padding: 0 10px;">
+          Match The Cats <!--Padding is optional-->
+        </span>
       </div>
     </div>
+
+    <div class="content">
+      <div id ="win"></div>
+      <div class="col-right">
+        <div id="memory_board"></div>
+      </div>
+
+      <div class="sidebar-left">
+        <div style='margin-left: 120px; width: 100%;'>
+        <div id='side'>
+    	   <h3><span id="minutes">0</span> minutes <span id="seconds">0</span> seconds</h3>
+          <h3><span id="finished">0 </span>/ 12 pairs</h3></div>
+          <div id="ballMenuContainer">
+            <div id="menuBall2" class="menuBall">
+              <a href="#" class="ball redball" onclick="newBoard(); return false;">
+                <div class="menuText">
+                    Restart Game
+                </div>
+              </a>
+            </div>
+          </div>
+          <h3> Best Score</h3>
+          <p id="bestscore"></p>
+          <input id='box' onclick="cheat()" type="submit" value="cheat" class="orange-flat-button">
+        </div>
+      </div>
+      <br class="clear" />
+    </div>
+
     <div id="footer">
-        <p>ART 101 Spring 2016 Midterm Project</p>
+        <p>Copy Right.  Names. 2016</p>
           <div style="display: table-cell; padding-left: 10px">
                   <div id='timer'>
                   </div>
@@ -60,6 +56,11 @@
     </div>
     
 </body>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+<script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
 <script src="memorygame.js"></script>
-      <script>normalDifficulty();</script>
+      <script>newBoard();</script>
+      
 </html>
