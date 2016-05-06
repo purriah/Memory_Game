@@ -27,6 +27,10 @@ var totalSeconds = 0;
 var bestscore = localStorage.getItem("bestscore");
 $('#bestscore').text(bestscore);
 
+
+
+
+
 Array.prototype.memory_tile_shuffle = function(){
     var i = this.length, j, temp;
     while(--i > 0){
@@ -55,13 +59,15 @@ function newBoard(){
 }
 
 
+
+
+
+
 function memoryFlipTile(tile,val){
   if(tile.innerHTML == "" && memory_values.length < 2){
-    console.log(val);
     tile.style.opacity = 0.9;
     tile.style.background = '#FFF';
     var innerHTML = '<img src="' + memory_dictionary[val] + '" style="width:53px;height:53px;"></img>';
-    console.log(innerHTML);
     tile.innerHTML = innerHTML;
     if(memory_values.length == 0){
       memory_values.push(val);
@@ -70,6 +76,7 @@ function memoryFlipTile(tile,val){
       memory_values.push(val);
       memory_tile_ids.push(tile.id);
       if(memory_values[0] == memory_values[1]){
+        console.log('HIT');
         x = x + 1;
         setCounter(x);
         tiles_flipped += 2;
@@ -99,6 +106,14 @@ function memoryFlipTile(tile,val){
   }
 }
 
+function reviewAll(){
+  $('#memory_board').children().each(function (i) {
+    this.style.opacity = 0.9;
+    this.style.background = '#FFF';
+    var innerHTML = '<img src="' + memory_dictionary[memory_array [i]] + '" style="width:53px;height:53px;"></img>';
+    this.innerHTML = innerHTML;
+  });
+}
 
 
 function setCounter(x) {
@@ -150,6 +165,15 @@ function win() {
   }
   $('#bestscore').text(localStorage.getItem("bestscore"));
   $('#title').text("You Made It !! You finished it in " + displayScore(totalSeconds));
+}
+
+
+
+function cheat(){
+  $('#side').hide();
+  $('#bestscore').text(localStorage.getItem("bestscore"));
+  $('#title').text("You Made It !! You finished it in " + displayScore(totalSeconds) + "(not recorded)");
+  reviewAll();
 }
 
 
